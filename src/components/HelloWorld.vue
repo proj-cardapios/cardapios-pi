@@ -16,7 +16,7 @@
                     <h4>Não tem uma conta? <router-link to="/about">clique aqui</router-link></h4>
                     <v-text-field label="Email" outlined ></v-text-field>
                     <v-text-field label="Senha" outlined></v-text-field>
-            <v-btn>Login1</v-btn>
+            <v-btn>Login</v-btn>
                     
                     
             </v-form>
