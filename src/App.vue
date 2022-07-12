@@ -12,5 +12,7 @@ export default {
   }),
 };
 </script>
-<style scoped>
+<style>
+v-container { 
+  font-family:Arial, Helvetica, sans-serif }
 </style>
