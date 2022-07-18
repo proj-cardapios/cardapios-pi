@@ -13,6 +13,8 @@ export default {
 };
 </script>
 <style>
-v-container { 
-  font-family:Arial, Helvetica, sans-serif }
+.body {
+  font-family:Helvetica, sans-serif;
+  padding: 0;
+}
 </style>
