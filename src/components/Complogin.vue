@@ -26,7 +26,7 @@
                     <h1 class="titlelogin">login</h1>
                     <v-text-field label="Email" outlined ></v-text-field>
                     <v-text-field label="Senha" outlined></v-text-field>
-                    <v-btn color="#4DC3C8">  Login  </v-btn>
+                    <v-btn @click="entrar" color="#4DC3C8">  Login  </v-btn>
                      <h3 class="titlecadastro">Quer experimentar? Totalmente gratuito!</h3>
                     <v-btn @click="cadastrar" color="#4DC3C8"> cadastrar </v-btn>
             </v-form>
@@ -41,6 +41,9 @@ export default {
  methods: {
   async cadastrar() {
       this.$router.push({ name: "Cadastro" });
+  },
+  async entrar() {
+      this.$router.push({ name: "Home" });
   }
     
  }
