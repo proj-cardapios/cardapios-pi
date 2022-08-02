@@ -23,7 +23,7 @@
         </v-card-title>
           
         <v-card-text>
-            <v-btn color="#4DC3C8" class="card1" v-show="card1" ><v-icon>mdi-food-apple</v-icon> {{Titulocard}}</v-btn>
+            <v-btn color="#4DC3C8" class="card1" v-show="card1" @click="entrarcard" ><v-icon>mdi-food-apple</v-icon> {{Titulocard}}</v-btn>
             <v-btn color="#4DC3C8" @click.stop="formcard = !formcard"><v-icon>mdi-plus</v-icon></v-btn>
         </v-card-text>
         </v-card>
@@ -76,7 +76,7 @@
 export default {
     data() {
         return {
-          card1: false,
+          card1: true,
             formcard: false,
             saibamais:false,
             titulocard: 'Preliminary report',
@@ -86,9 +86,14 @@ export default {
           counter: value => value.length <= 20 || 'Max 20 caracteres',
           refeicoescounter: Number =>  value.length <= 5 || 'Maximo de 5 refeições',
           
-        }
+        },
     }
-}
+},
+    methods: {
+  async entrarcard() {
+      this.$router.push({ name: "Cardapio1" });
+  },
+    },
 }
 </script>
 
