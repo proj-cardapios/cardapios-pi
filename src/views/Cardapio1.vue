@@ -23,22 +23,21 @@
       </v-col>
       <v-col cols="5">
         <v-card-text>
-            <v-btn color="#4DC3C8" @click.stop="formcard = !formcard"><v-icon>mdi-plus</v-icon></v-btn>
+            <v-btn color="#4DC3C8" @click="formRefs = true"><v-icon>mdi-plus</v-icon></v-btn>
         </v-card-text>
       </v-col>
     </v-row>
     <v-row>
     <v-col cols="1"></v-col>
     <v-col cols="10">
-    <v-alert class="formcardapio" transition="scale-transition" v-show="formcard" elevation="6" outlined shaped>
+    <v-alert class="formcardapio" transition="scale-transition" v-show="formRefs" elevation="6" outlined shaped>
         <v-form>
         <v-container>
           <v-row>
-            <v-col class="d-flex"
-              
-            >
+            <v-col class="d-flex">
               <v-text-field
                 :rules="[rules.required, rules.counter]"
+                v-model="Campotitulo"
                 label="Nome da refeição"
                 counter
                 maxlength="20"
@@ -50,13 +49,13 @@
               cols="12"
               sm="4">
     
-              <v-btn color="#4DC3C8" @click.stop=""><v-icon>mdi-plus</v-icon> Criar refeição</v-btn>
+              <v-btn color="#4DC3C8" @click.stop="FuncAddRefeicao"><v-icon>mdi-plus</v-icon> Criar refeição</v-btn>
             </v-col>
             <v-col cols="12" sm="1"></v-col>
             <v-col
               cols="12"
               sm="2">
-              <v-btn color="#1C535C" @click.stop="formcard = !formcard"><v-icon>mdi-cancel</v-icon>Cancelar</v-btn>
+              <v-btn color="#B2DFE1" @click.stop="formRefs = !formRefs"><v-icon>mdi-cancel</v-icon>Cancelar</v-btn>
             </v-col>
           </v-row>
         </v-container>
@@ -69,7 +68,23 @@
 
       <v-col cols="1"></v-col>
       <v-col cols="10">
-  <refeicao/>
+        <div>
+  <v-expansion-panels>
+    <v-expansion-panel v-for="refeicao in Refeicoes" :key="refeicao"
+    >
+    
+      <v-expansion-panel-header>
+      <h4>{{Refeicao.titulo}}</h4>
+      <v-btn color="#4DC3C8" max-width="100px"><v-icon>mdi-pencil</v-icon>editar</v-btn>
+      <v-btn color="#B2DFE1" max-width="140px"><v-icon>mdi-cancel</v-icon>Cancelar</v-btn>
+
+      </v-expansion-panel-header>
+      <v-expansion-panel-content>
+        Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+      </v-expansion-panel-content>
+    </v-expansion-panel>
+  </v-expansion-panels>
+</div>
   </v-col>
         <v-col cols="1"></v-col>
 
@@ -78,16 +93,15 @@
 </template>
 
 <script>
-import Home from '../views/Home.vue'
 import Refeicao from '../components/Refeicao.vue'
 export default {
   components: {
-        Home,Refeicao
+      Refeicao
     }, 
     data() {
         return {
-          formcard:false,
-          refeicao: false,
+          Campotitulo: "",
+          formRefs:false,
             dialog: false,
             ptotal: 5,
             show1: false,
@@ -100,6 +114,7 @@ export default {
             Reftitle3: "Refeição3",
             Reftitle4: "Refeição4",
             Reftitle5: "Refeição5",
+            Refeicoes:[],
             rules: {
           required: value => !!value || 'obrigatório  .',
           counter: value => value.length <= 20 || 'Max 20 caracteres',
@@ -112,6 +127,14 @@ export default {
         async Entrarhome() {
             this.$router.push({ name: "Home" });
         },
+         FuncAddRefeicao(){
+      if(this.Campotitulo){
+        this.Refeicoes.push({
+          titulo:this.Campotitulo
+        })
+      }
+      this.Campotitulo="";
+    }
     },
 
 } 

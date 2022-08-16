@@ -1,5 +1,8 @@
 <template>
   <v-container fluid class="body">
+    <div class="bar">
+      <img src="@/assets/MENU.jpg" >
+    </div>
   <div>
     <v-row>
     <v-col cols="1"></v-col>
@@ -27,7 +30,7 @@
         </v-card-title>
         <v-card-text>
 
-        <v-btn color="#4DC3C8" v-for="cardapio in Cardapios" :key="cardapio" @click="entrarCard"><v-icon>mdi-food-apple</v-icon>{{cardapio.titulo}}</v-btn>
+          <v-btn color="#4DC3C8" v-for="cardapio in Cardapios " :key="cardapio" @click="entrarCard"><v-icon>mdi-food-apple</v-icon>{{cardapio.titulo}}</v-btn>
         </v-card-text>
           <v-card-text>
             <v-btn color="#4DC3C8" @click.stop="formcard = !formcard"><v-icon>mdi-plus</v-icon></v-btn>
@@ -65,7 +68,7 @@
             <v-col
               cols="12"
               sm="2">
-              <v-btn color="#1C535C" @click.stop="formcard = !formcard"><v-icon>mdi-cancel</v-icon>Cancelar</v-btn>
+              <v-btn color="#B2DFE1" @click.stop="formcard = !formcard"><v-icon>mdi-cancel</v-icon>Cancelar</v-btn>
             </v-col>
           </v-row>
         </v-container>
@@ -84,9 +87,9 @@ export default {
     data() {
       return {
             Campotitulo: "",
-            formcard: false,
+            formcard  : false,
             saibamais:false,
-            Cardapios:  [],
+            Cardapios:  [ ],
           
         rules: {
           required: value => !!value || 'obrigatório  .',
@@ -127,5 +130,16 @@ export default {
   font-family:Helvetica, sans-serif;
   padding: 0;
   text-align: center;
+}
+.bar {
+  margin-bottom: 1rem;
+  background: #4DC3C8;
+  padding: 1rem 0 1rem 0;
+  text-align: center;
+  font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+}
+img {
+  max-height: 7rem;
+  max-width: 7rem;
 }
 </style>

@@ -6,7 +6,7 @@ Vue.use(VueRouter)
 
 const routes = [
   {
-    path: '/',
+    path: '/home',
     name: 'Home',
     // route level code-splitting
     // this generates a separate chunk (about.[hash].js) for this route
@@ -14,7 +14,7 @@ const routes = [
     component: () => import(/* webpackChunkName: "about" */ '../views/Home.vue')
   },
   {
-    path: '/Cardapio1',
+    path: '/Cardapios',
     name: 'Cardapio',
     // route level code-splitting
     // this generates a separate chunk (about.[hash].js) for this route

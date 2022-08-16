@@ -9,7 +9,7 @@
       <v-expansion-panel-header>
       <h4>refeição X</h4>
       <v-btn color="#4DC3C8" max-width="100px"><v-icon>mdi-pencil</v-icon>editar</v-btn>
-      <v-btn color="#1C535C" max-width="140px"><v-icon>mdi-cancel</v-icon>Cancelar</v-btn>
+      <v-btn color="#B2DFE1" max-width="140px"><v-icon>mdi-cancel</v-icon>Cancelar</v-btn>
 
       </v-expansion-panel-header>
       <v-expansion-panel-content>
