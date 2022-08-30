@@ -36,7 +36,6 @@
           <v-row>
             <v-col class="d-flex">
               <v-text-field
-                :rules="[rules.required, rules.counter]"
                 v-model="Campotitulo"
                 label="Nome da refeição"
                 counter
@@ -74,13 +73,13 @@
     >
     
       <v-expansion-panel-header>
-      <h4>{{Refeicao.titulo}}</h4>
-      <v-btn color="#4DC3C8" max-width="100px"><v-icon>mdi-pencil</v-icon>editar</v-btn>
-      <v-btn color="#B2DFE1" max-width="140px"><v-icon>mdi-cancel</v-icon>Cancelar</v-btn>
+      <h4>{{refeicao.titulo}}</h4>
+        <v-btn color="#4DC3C8" max-width="100px"><v-icon>mdi-pencil</v-icon>editar</v-btn>
+        <v-btn color="#B2DFE1" max-width="140px"><v-icon>mdi-cancel</v-icon>Cancelar</v-btn>
 
       </v-expansion-panel-header>
       <v-expansion-panel-content>
-        Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+        Para adicionar clique na opção "editar"
       </v-expansion-panel-content>
     </v-expansion-panel>
   </v-expansion-panels>
@@ -115,12 +114,6 @@ export default {
             Reftitle4: "Refeição4",
             Reftitle5: "Refeição5",
             Refeicoes:[],
-            rules: {
-          required: value => !!value || 'obrigatório  .',
-          counter: value => value.length <= 20 || 'Max 20 caracteres',
-          refeicoescounter: Number =>  value.length <= 5 || 'Maximo de 5 refeições',
-          
-        },
         };
     },
     methods: {
