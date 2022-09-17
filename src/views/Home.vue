@@ -1,8 +1,5 @@
 <template>
   <v-container fluid class="body">
-    <div class="bar">
-      <img src="@/assets/MENU.jpg" >
-    </div>
   <div>
     <v-row>
     <v-col cols="1"></v-col>
