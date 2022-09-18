@@ -1,6 +1,6 @@
 <template>
 <v-app><div class="bar">
-      <img src="@/assets/MENU.jpg" @click="Entrarhome">
+      <img src="@/assets/MENU.jpg">
     </div>
     <router-view></router-view></v-app>
 </template>

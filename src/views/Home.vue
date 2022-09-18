@@ -26,8 +26,7 @@
             <h2>Cardápios</h2>
         </v-card-title>
         <v-card-text>
-
-          <v-btn color="#4DC3C8" v-for="cardapio in Cardapios " :key="cardapio" @click="entrarCard"><v-icon>mdi-food-apple</v-icon>{{cardapio.titulo}}</v-btn>
+          <Btncard :titulo="id" v-for="id in Cardapios" :key="id"></Btncard>
         </v-card-text>
           <v-card-text>
             <v-btn color="#4DC3C8" @click.stop="formcard = !formcard"><v-icon>mdi-plus</v-icon></v-btn>
@@ -80,36 +79,38 @@
 
 
 <script>
+import Btncard from '@/components/btncard.vue'
 export default {
     data() {
-      return {
+        return {
             Campotitulo: "",
-            formcard  : false,
-            saibamais:false,
-            Cardapios:  [ ],
-          
-        rules: {
-          required: value => !!value || 'obrigatório  .',
-          counter: value => value.length <= 20 || 'Max 20 caracteres',
-          refeicoescounter: Number =>  value.length <= 5 || 'Maximo de 5 refeições',
-          
-        },
-    }
-  },
-  methods:{
-    entrarCard() {
-      this.$router.push({ name: "Cardapio" });
-  },
-    FuncAddCardapio(){
-      if(this.Campotitulo){
-        this.Cardapios.push({
-          titulo:this.Campotitulo
-        })
-      }
-      this.Campotitulo="";
-    }
+            formcard: false,
+            saibamais: false,
+            Cardapios: [{
+                    id: 1,
+                    titulo: "morte a dieta",
+                }],
+            rules: {
+                required: value => !!value || "obrigatório  .",
+                counter: value => value.length <= 20 || "Max 20 caracteres",
+                refeicoescounter: Number => value.length <= 5 || "Maximo de 5 refeições",
+            },
+        };
     },
-    
+    methods: {
+        entrarCard() {
+            this.$router.push({ name: "Cardapio" });
+        },
+        FuncAddCardapio() {
+            if (this.Campotitulo) {
+                this.Cardapios.push({
+                    titulo: this.Campotitulo
+                });
+            }
+            this.Campotitulo = "";
+        }
+    },
+    components: { Btncard }
 }
 </script>
 

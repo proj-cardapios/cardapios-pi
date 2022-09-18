@@ -12,7 +12,7 @@
         </v-card-subtitle>
         <v-divider></v-divider>
         <v-card-subtitle >
-          pisojehgseojkg
+          {{titulo}}
         </v-card-subtitle>
         <v-divider color="#4DC3C8"></v-divider>
       </div>
@@ -71,7 +71,7 @@
     
       <v-expansion-panel-header>
       <h4>{{refeicao.titulo}}</h4>
-        <v-btn color="#4DC3C8" max-width="100px"><v-icon>mdi-pencil</v-icon>editar</v-btn>
+        <v-btn color="#4DC3C8" max-width="100px" @click="Editarrefs"><v-icon>mdi-pencil</v-icon>editar</v-btn>
         <v-btn color="#B2DFE1" max-width="140px"><v-icon>mdi-cancel</v-icon>Cancelar</v-btn>
 
       </v-expansion-panel-header>
@@ -91,6 +91,7 @@
 <script>
 import Refeicao from '../components/Refeicao.vue'
 export default {
+  props: ['titulo'],
   components: {
       Refeicao
     }, 
@@ -100,22 +101,15 @@ export default {
           formRefs:false,
             dialog: false,
             ptotal: 5,
-            show1: false,
-            show2: false,
-            show3: false,
-            show4: false,
-            show5: false,
-            Reftitle1: "Refeição1",
-            Reftitle2: "Refeição2",
-            Reftitle3: "Refeição3",
-            Reftitle4: "Refeição4",
-            Reftitle5: "Refeição5",
-            Refeicoes:[],
+            Refeicoes:[]
         };
     },
     methods: {
         async Entrarhome() {
             this.$router.push({ name: "Home" });
+        },
+        async Editarrefs() {
+          this.$router.push({name: "Refeicoes"})
         },
          FuncAddRefeicao(){
       if(this.Campotitulo){
@@ -136,17 +130,6 @@ export default {
 }
 .porcoes {
   text-decoration-color:#4DC3C8;
-}
-.bar {
-  margin-bottom: 1rem;
-  background: #4DC3C8;
-  padding: 1rem 0 1rem 0;
-  text-align: center;
-  font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
-}
-img {
-  max-height: 7rem;
-  max-width: 7rem;
 }
 .body {
   font-family:Helvetica, sans-serif;

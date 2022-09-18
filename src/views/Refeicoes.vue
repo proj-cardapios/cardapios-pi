@@ -4,64 +4,7 @@
       <v-col cols="1"></v-col>
       <v-col cols="10">
         <v-card >
-          <div> 
-         <v-divider color=#4DC3C8></v-divider>
-        <v-card-subtitle >
-          <h3 class="alimentocard">Arroz</h3>
-          <v-btn color="#4DC3C8"><v-icon>mdi-plus</v-icon></v-btn>
-          jh
-          <v-btn color="#B2DFE1" ><v-icon>mdi-les</v-icon></v-btn>
-        </v-card-subtitle>
-        <v-divider></v-divider>
-        <v-card-subtitle >
-          pisojehgseojkg
-        </v-card-subtitle>
-        <v-divider></v-divider>
-        <v-card-subtitle >
-          pisojehgseojkg
-        </v-card-subtitle>
-        <v-divider color="#4DC3C8"></v-divider>
-      </div>
-        </v-card>
-        <v-card >
-          <div> 
-         <v-divider color=#4DC3C8></v-divider>
-        <v-card-subtitle >
-          <h3 class="alimentocard">Arroz</h3>
-          <v-btn color="#4DC3C8"><v-icon>mdi-plus</v-icon></v-btn>
-          jh
-          <v-btn color="#B2DFE1" ><v-icon>mdi-les</v-icon></v-btn>
-        </v-card-subtitle>
-        <v-divider></v-divider>
-        <v-card-subtitle >
-          pisojehgseojkg
-        </v-card-subtitle>
-        <v-divider></v-divider>
-        <v-card-subtitle >
-          pisojehgseojkg
-        </v-card-subtitle>
-        <v-divider color="#4DC3C8"></v-divider>
-      </div>
-        </v-card>
-        <v-card >
-          <div> 
-         <v-divider color=#4DC3C8></v-divider>
-        <v-card-subtitle >
-          <h3 class="alimentocard">Arroz</h3>
-          <v-btn color="#4DC3C8"><v-icon>mdi-plus</v-icon></v-btn>
-          jh
-          <v-btn color="#B2DFE1" ><v-icon>mdi-les</v-icon></v-btn>
-        </v-card-subtitle>
-        <v-divider></v-divider>
-        <v-card-subtitle >
-          pisojehgseojkg
-        </v-card-subtitle>
-        <v-divider></v-divider>
-        <v-card-subtitle >
-          pisojehgseojkg
-        </v-card-subtitle>
-        <v-divider color="#4DC3C8"></v-divider>
-      </div>
+          <Alimento :titulo="id" v-for="id in Alimentos" :key="id"/>
         </v-card>
       </v-col>
     </v-row>
@@ -69,9 +12,44 @@
 </template>
 
 <script>
-export default {
+import Alimento from '../components/Alimento.vue'
 
+export default {
+    data() {
+        return {
+            porcao: 0,
+            Alimentos: [
+              {
+              id: 1,
+              titulo: "feijão"
+              },
+              {
+              id: 2,
+              titulo: "arroz"
+              },
+              {
+              id: 3,
+              titulo: "Alface"
+              },
+              {
+              id: 4,
+              titulo: "batata cozida"
+              },
+            ]
+        };
+        
+    },
+    methods: {
+        async Addporcao() {
+            this.porcao = this.porcao + 1;
+        },
+        async Tirarporcao() {
+            this.porcao = this.porcao - 1;
+        },
+    },
+    components: { Alimento }
 }
+  
 </script>
 
 <style scoped>
