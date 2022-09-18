@@ -4,7 +4,7 @@
       <v-col cols="1"></v-col>
       <v-col cols="10">
         <v-card >
-          <Alimento :titulo="id" v-for="id in Alimentos" :key="id"/>
+          <Alimento :idalimento="id" v-for="id in Alimentos" :key="id"/>
         </v-card>
       </v-col>
     </v-row>
@@ -21,31 +21,31 @@ export default {
             Alimentos: [
               {
               id: 1,
-              titulo: "feijão"
+              titulo: "feijão",
+              peso: 50,
+              calorias:90,
               },
               {
               id: 2,
-              titulo: "arroz"
+              titulo: "arroz",
+              peso: 50,
+              calorias:70,
               },
               {
               id: 3,
-              titulo: "Alface"
+              titulo: "Alface",
+              peso: 40,
+              calorias:50,
               },
               {
               id: 4,
-              titulo: "batata cozida"
+              titulo: "batata cozida",
+              peso: 50,
+              calorias:80,
               },
             ]
         };
         
-    },
-    methods: {
-        async Addporcao() {
-            this.porcao = this.porcao + 1;
-        },
-        async Tirarporcao() {
-            this.porcao = this.porcao - 1;
-        },
     },
     components: { Alimento }
 }

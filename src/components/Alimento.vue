@@ -2,18 +2,18 @@
           <div class="infoalimentos"> 
               <v-divider color=#4DC3C8></v-divider>
               <v-card-subtitle >
-                <h3 class="alimentocard">{{titulo.titulo}}</h3>
+                <h3 class="alimentocard">{{idalimento.titulo}}</h3>
                 <v-btn color="#4DC3C8" @click="Tirarporcao"><v-icon>mdi-minus</v-icon></v-btn>
                 <v-btn>{{porcao}}</v-btn>
                 <v-btn color="#B2DFE1" @click="Addporcao"><v-icon>mdi-plus</v-icon></v-btn>
               </v-card-subtitle>
               <v-divider></v-divider>
               <v-card-subtitle >
-                pisojehgseojkg
+                Peso/Porção: {{idalimento.peso}} gramas
               </v-card-subtitle>
               <v-divider></v-divider>
               <v-card-subtitle >
-                pisojehgseojkg
+                Caloria: {{idalimento.calorias}} cal
               </v-card-subtitle>
               <v-divider color="#4DC3C8"></v-divider>
           </div>
@@ -21,7 +21,7 @@
 
 <script>
 export default {
-    props: ['titulo'],
+    props: ['idalimento'],
   data () {
     return {
       porcao: 0,
