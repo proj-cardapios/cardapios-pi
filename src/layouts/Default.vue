@@ -65,7 +65,7 @@ export default {
   font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
 }
 img {
-  margin-left: 40%;
+  margin-left: 42%;
   max-height: 7rem;
   max-width: 7rem;
 }

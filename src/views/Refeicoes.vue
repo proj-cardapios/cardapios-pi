@@ -3,8 +3,23 @@
     <v-row>
       <v-col cols="1"></v-col>
       <v-col cols="10">
-        <v-card >
+        <v-card class="alimentos">
           <Alimento :idalimento="id" v-for="id in Alimentos" :key="id"/>
+        </v-card>
+        <v-divider color="#B2DFE1"></v-divider>
+        <v-card>
+          <v-divider color=#4DC3C8></v-divider>
+          <v-row>
+            <v-col cols="8">
+            </v-col>
+            <v-col cols="1">
+        <v-btn color="#4DC3C8">Cancelar</v-btn>
+      </v-col>
+      <v-col cols="1"></v-col>
+      <v-col cols="1">
+        <v-btn color="#B2DFE1">Criar refeição</v-btn>
+      </v-col>
+          </v-row>
         </v-card>
       </v-col>
     </v-row>
@@ -58,19 +73,8 @@ export default {
     padding: 0;
     text-align: center;
   }
-  .bar {
-    margin-bottom: 1rem;
-    background: #4DC3C8;
-    padding: 1rem 0 1rem 0;
-    text-align: center;
-    font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
-  }
-  img {
-    max-height: 7rem;
-    max-width: 7rem;
-  }
-  .alimentocard {
-    text-align: left;
+  .alimentos {
+    margin-bottom: 2rem;
   }
 </style>
 

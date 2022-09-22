@@ -1,8 +1,10 @@
 <template>
-<v-app><div class="bar">
+  <v-app>
+    <div class="bar">
       <img src="@/assets/MENU.jpg">
     </div>
-    <router-view></router-view></v-app>
+    <router-view>   </router-view>
+</v-app>
 </template>
 
 <script>
