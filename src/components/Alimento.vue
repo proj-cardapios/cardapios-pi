@@ -4,7 +4,7 @@
               <v-card-subtitle >
                 <h3 class="alimentocard">{{idalimento.titulo}}</h3>
                 <v-btn color="#4DC3C8" @click="Tirarporcao"><v-icon>mdi-minus</v-icon></v-btn>
-                <v-btn>{{porcao}}</v-btn>
+                <v-btn>{{idalimento.porcao}}</v-btn>
                 <v-btn color="#B2DFE1" @click="Addporcao"><v-icon>mdi-plus</v-icon></v-btn>
               </v-card-subtitle>
               <v-divider></v-divider>
@@ -23,9 +23,6 @@
 export default {
     props: ['idalimento'],
   data () {
-    return {
-      porcao: 0,
-    }
   },
   methods: {
     async Addporcao() {
