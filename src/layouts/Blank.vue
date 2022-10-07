@@ -13,7 +13,7 @@ export default {
 }
 </script>
 
-<style>
+<style scoped>
 .bar {
   margin-bottom: 1rem;
   background: #4DC3C8;

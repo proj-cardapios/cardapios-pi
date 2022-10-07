@@ -19,7 +19,37 @@
         <v-col cols="1"></v-col>
       <v-col cols="10">
         <v-card elevation="4">
-        <v-alert transition="scale-transition" v-model="saibamais" elevation="4" color="#4DC3C8" ><span>ksdfujhsdgjhgkjwhefkwjegekwfbewfhjkewkfjhewkfhbwekfhewkfhewkfhjwlkfjhwkfjhwkfjhwkfwhfkjwhfewjfhekfjhekfjesfksjfhn</span></v-alert>
+        <v-alert transition="scale-transition" v-model="saibamais" elevation="4" color="#4DC3C8" ><span>
+          <v-row>
+            <v-col cols="4">
+                <v-card color="#B2DFE1" class="alunos">
+                  <v-card-subtitle><img src="@/assets/imagem_jorge2.png"></v-card-subtitle>
+                  <h3>Jorge Luis Zanela</h3>
+                  <h6>Joinville</h6>
+                  <h6>Santa Catarina</h6>
+                  <p> ksjdfggsjkfhsfhwpikehfwkehfwkiefhwkjfhwkefhijhfskjhvkjhskjhffhskjhfsdfhjhwuhcanjcajfhakjfhakjfhkfhakfckjnawcihfaakjfchuh</p>
+                </v-card>
+            </v-col>
+            <v-col cols="4">
+              <v-card color="#B2DFE1" class="alunos">
+                  <v-card-subtitle><img src="@/assets/amanda_perfil.png"></v-card-subtitle>
+                  <h3>Amanda Vincenzi</h3>
+                  <h6>Araquari</h6>
+                  <h6>Santa Catarina</h6>
+                  <p> ksjdfggsjkfhsfhwpikehfwkehfwkiefhwkjfhwkefhijhfskjhvkjhskjhffhskjhfsdfhjhwuhcanjcajfhakjfhakjfhkfhakfckjnawcihfaakjfchuh</p>
+                </v-card>
+            </v-col>
+            <v-col cols="4">
+              <v-card color="#B2DFE1" class="alunos">
+                  <v-card-subtitle><img src="@/assets/maria_perfil.png"></v-card-subtitle>
+                  <h3>Maria Eduarda</h3>
+                  <h6>Joinville</h6>
+                  <h6>Santa Catarina</h6>
+                  <p> ksjdfggsjkfhsfhwpikehfwkehfwkiefhwkjfhwkefhijhfskjhvkjhskjhffhskjhfsdfhjhwuhcanjcajfhakjfhakjfhkfhakfckjnawcihfaakjfchuh</p>
+                </v-card>
+            </v-col>
+          </v-row>
+        </span></v-alert>
         </v-card>
         <v-card class="cardapios" elevation="2" outlined shaped >
         <v-card-title >
@@ -91,7 +121,7 @@ export default {
                     titulo: "morte a dieta",
                 }],
             rules: {
-                required: value => !!value || "obrigatório  .",
+                required: value => !!value || "obrigatório",
                 counter: value => value.length <= 20 || "Max 20 caracteres",
                 refeicoescounter: Number => value.length <= 5 || "Maximo de 5 refeições",
             },
@@ -114,10 +144,7 @@ export default {
 }
 </script>
 
-<style>
-.row {
-  margin-top: 3rem;
-}
+<style scoped>
 .cardapios {
   margin-top: 2rem;
 }
@@ -137,7 +164,13 @@ export default {
   font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
 }
 img {
-  max-height: 7rem;
-  max-width: 7rem;
+  max-height: 18rem;
+  max-width: 15rem;
+  border: 3px solid #4DC3C8 ;
+  border-radius:18px
+}
+.alunos {
+  padding: 0 3px;
+  border-radius:18px
 }
 </style>
