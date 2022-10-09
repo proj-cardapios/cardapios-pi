@@ -27,10 +27,10 @@
               elevation="4"
               color="#4DC3C8"
               ><span>
-                <v-card-title>
-                  <v-icon class="icondevs">mdi-account</v-icon>
+                <v-card-subtitle>
+                  <v-icon class="icondevs" large>mdi-account</v-icon>
                   <h2>Alunos / Devs</h2>
-                </v-card-title>
+                </v-card-subtitle>
                 <v-row>
                   <v-col cols="4">
                     <v-card color="#B2DFE1" class="alunos">
@@ -41,8 +41,7 @@
                       <h6>Joinville</h6>
                       <h6>Santa Catarina</h6>
                       <p>
-                        ksjdfggsjkfhsfhwpikehfwkehfwkiefhwkjfhwkefhijhfskjhvkjhskjhffhskjhfsdfhjhwuhcanjcajfhakjfhakjfhkfhakfckjnawcihfaakjfchuh
-                      </p>
+                        Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.</p>
                     </v-card>
                   </v-col>
                   <v-col cols="4">
@@ -71,6 +70,46 @@
                       </p>
                     </v-card>
                   </v-col>
+                </v-row>
+                <v-row>
+                    <v-col cols="1"></v-col>
+                    <v-col cols="10">
+                      <v-divider color="#B2DFE1"></v-divider>
+                    </v-col>
+                    <v-col cols="1"></v-col>
+                </v-row>
+                <v-row>
+                  <v-col cols="1"></v-col>
+                  <v-col cols="10">
+                    <v-card-subtitle>
+                      <h2>Como foi desenvolvido?</h2>
+                    </v-card-subtitle>
+
+                      <v-row>
+                        <v-col cols="6">
+                          <v-card color="#B2DFE1" class="alunos">
+                          <v-card-subtitle>
+                            <h3> Fron-end</h3>
+                          </v-card-subtitle>
+                          <v-card-subtitle>
+                            <h5> Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.</h5>
+                          </v-card-subtitle>
+                          </v-card>
+                        </v-col>
+                        <v-col cols="6">
+                          <v-card color="#B2DFE1" class="alunos">
+                          <v-card-subtitle>
+                            <h3> Fron-end</h3>
+                          </v-card-subtitle>
+                          <v-card-subtitle>
+                            <h5> Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.</h5>
+                          </v-card-subtitle>
+                        </v-card>
+                        </v-col>
+                      </v-row>
+
+                  </v-col>
+                  <v-col cols="1"></v-col>
                 </v-row>
               </span></v-alert
             >

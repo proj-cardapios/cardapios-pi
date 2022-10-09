@@ -1,34 +1,6 @@
 <template>
     <v-app>
-      <div class="bar">
-      <v-menu 
-      open-on-hover
-      bottom
-      offset-y
-    >
-    <template v-slot:activator="{ on, attrs }">
-        <v-btn class="menu"
-          color="#B2DFE1"
-          v-bind="attrs"
-          v-on="on"
-        >
-        <v-icon color="#4DC3C8">mdi-menu</v-icon>
-        </v-btn>
-      </template>
-      <v-list color="#B2DFE1">
-        <v-list-item>
-        <v-btn dense color="#4DC3C8" >
-          <v-list-item-title @click="Entrarhome">Página Inicial</v-list-item-title>
-        </v-btn>
-        <v-btn dense color="#4DC3C8">
-          <v-list-item-title @click="Entrarperfil">Perfil</v-list-item-title>
-        </v-btn>
-        <v-btn dense color="#4DC3C8">
-          <v-list-item-title @click="Entrarlogin">Sair</v-list-item-title>
-        </v-btn>
-        </v-list-item>
-      </v-list>
-    </v-menu>
+    <div class="bar">
       <img src="@/assets/MENU.jpg" @click="Entrarhome">
     </div>
     <router-view></router-view>
@@ -58,14 +30,14 @@ export default {
 
 <style scoped>
 .bar {
-
+  margin-bottom: 1rem;
   background: #4DC3C8;
-  padding: 1rem 0 0 0;
-  text-align:left;
+  padding: 1rem 0 1rem 0;
+  text-align: center;
   font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
 }
 img {
-  margin-left: 42%;
+  align-items: center;
   max-height: 7rem;
   max-width: 7rem;
 }

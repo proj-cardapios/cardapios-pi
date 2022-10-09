@@ -51,7 +51,7 @@
             <v-col
               cols="12"
               sm="2">
-              <v-btn color="#B2DFE1" @click.stop="formRefs = !formRefs"><v-icon>mdi-cancel</v-icon>Cancelar</v-btn>
+              <v-btn color="#B2DFE1" @click="formAlimentos"><v-icon>mdi-cancel</v-icon>Cancelar</v-btn>
             </v-col>
           </v-row>
         </v-container>
@@ -70,20 +70,66 @@
     >
     
       <v-expansion-panel-header>
-      <h4>{{refeicao.titulo}}</h4>
-        <v-btn color="#4DC3C8" max-width="100px" @click="Editarrefs"><v-icon>mdi-pencil</v-icon>editar</v-btn>
-        <v-btn color="#B2DFE1" max-width="140px"><v-icon>mdi-cancel</v-icon>Cancelar</v-btn>
+        <v-row>
+          <v-col cols="3">
 
-      </v-expansion-panel-header>
-      <v-expansion-panel-content>
+          </v-col>
+          <v-col cols="4">
+            <v-card-subtitle>
+            <h4>{{refeicao.titulo}} fgsdfgsgd</h4></v-card-subtitle>
+          </v-col>
+          <v-col cols="1">
+            <v-btn color="#4DC3C8" max-width="100px" @click="formAlimentos"><v-icon>mdi-pencil</v-icon>editar</v-btn>
+          </v-col>
+          <v-col cols="1"></v-col>
+          <v-col cols="1">
+            <v-btn color="#B2DFE1" max-width="140px"><v-icon>mdi-delete </v-icon>Excluir</v-btn>
+          </v-col>
+        </v-row>
+        
+
+
+      </v-expansion-panel-header> 
         Para adicionar clique na opção "editar"
-      </v-expansion-panel-content>
+        <v-text>
+          <v-btn color="#4DC3C8" max-width="100px" @click="formAlimentos"><v-icon>mdi-pencil</v-icon>editar</v-btn>
+        </v-text>
     </v-expansion-panel>
   </v-expansion-panels>
 </div>
-  </v-col>
-        <v-col cols="1"></v-col>
-
+</v-col>
+<v-col cols="1"></v-col>
+    
+<v-col col="1"></v-col>
+      <v-col cols="10">
+        <v-alert class="formcardapio" transition="scale-transition" v-show="formAlimentos" elevation="6" outlined shaped>
+        <v-form>
+        <v-container>
+          <v-row>
+            <v-col>
+              <v-text-field label="Nome da refeição" counter maxlength="20"></v-text-field> 
+              <v-text-field label="Hora da refeição: XX:XX"></v-text-field> 
+            </v-col>
+            </v-row>
+            <v-row>
+            <v-col
+              cols="12"
+              sm="4">
+    
+              <v-btn color="#4DC3C8"><v-icon>mdi-plus</v-icon> Criar refeição</v-btn>
+            </v-col>
+            <v-col cols="12" sm="1"></v-col>
+            <v-col
+              cols="12"
+              sm="2">
+              <v-btn color="#B2DFE1"><v-icon>mdi-cancel</v-icon>Cancelar</v-btn>
+            </v-col>
+          </v-row>
+        </v-container>
+        </v-form>
+    </v-alert>
+      </v-col>
+      <v-col cols="1"></v-col>
     </v-row>
   </v-container>
 </template>
@@ -99,6 +145,7 @@ export default {
         return {
           Campotitulo: "",
           formRefs:false,
+          formAlimentos:false,
             dialog: false,
             ptotal: 5,
             Refeicoes:[]
