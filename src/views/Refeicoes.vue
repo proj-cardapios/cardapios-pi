@@ -11,6 +11,7 @@
           <v-divider color=#4DC3C8></v-divider>
           <v-row>
             <v-col cols="8">
+              
             </v-col>
             <v-col cols="1">
         <v-btn color="#4DC3C8">Cancelar</v-btn>
@@ -32,31 +33,34 @@ import Alimento from '../components/Alimento.vue'
 export default {
     data() {
         return {
-            porcao: 0,
             Alimentos: [
               {
               id: 1,
               titulo: "feijão",
               peso: 50,
               calorias:90,
+              porcao:0
               },
               {
               id: 2,
               titulo: "arroz",
               peso: 50,
               calorias:70,
+              porcao:0
               },
               {
               id: 3,
               titulo: "Alface",
               peso: 40,
               calorias:50,
+              porcao:0
               },
               {
               id: 4,
               titulo: "batata cozida",
               peso: 50,
               calorias:80,
+              porcao:0
               },
             ]
         };

@@ -30,12 +30,7 @@
 <script>
 export default {
     methods: {
-        Editarperfil() {
-            this.$router.push({ name: "Cadastro" });
-        },
-        Desconectar() {
-            this.$router.push({ name: "Login" });
-        },
+        
     }
 }
 </script>
