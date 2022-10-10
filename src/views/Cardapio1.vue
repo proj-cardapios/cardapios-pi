@@ -1,7 +1,7 @@
 <template>
   <v-container fluid class="body">
 
-    <v-row >
+    <v-row>
       <v-col cols="1"></v-col>
       <v-col cols="6">
         <v-card>
@@ -12,24 +12,16 @@
         </v-card-subtitle>
         <v-divider></v-divider>
         <v-card-subtitle >
+          {{titulo}}
         </v-card-subtitle>
         <v-divider color="#4DC3C8"></v-divider>
       </div>
         </v-card>
       </v-col>
       <v-col cols="5">
-        <v-card-subtitle>
-          <h4>Criar Refeição:</h4>
-
+        <v-card-text>
             <v-btn color="#4DC3C8" @click="formRefs = true"><v-icon>mdi-plus</v-icon></v-btn>
-
-          <h4>Numero de Refeições Totais: {{Numrefs}} / 5</h4>
-          <v-alert v-model="Aviso">
-            <span>
-              <h5>Numero máximo de Refeições foi atingido </h5>
-            </span>
-          </v-alert>
-        </v-card-subtitle>
+        </v-card-text>
       </v-col>
     </v-row>
     <v-row>
@@ -39,9 +31,13 @@
         <v-form>
         <v-container>
           <v-row>
-            <v-col>
-              <v-text-field label="Nome da refeição" counter maxlength="20" v-model="Campotitulo"></v-text-field> 
-              <v-text-field label="Hora da refeição: XX:XX"></v-text-field>  
+            <v-col class="d-flex">
+              <v-text-field
+                v-model="Campotitulo"
+                label="Nome da refeição"
+                counter
+                maxlength="20"
+              ></v-text-field>  
             </v-col>
             </v-row>
             <v-row>
@@ -55,7 +51,7 @@
             <v-col
               cols="12"
               sm="2">
-              <v-btn color="#B2DFE1" @click="formRefs = false"><v-icon>mdi-cancel</v-icon>Cancelar</v-btn>
+              <v-btn color="#B2DFE1" @click="formAlimentos"><v-icon>mdi-cancel</v-icon>Cancelar</v-btn>
             </v-col>
           </v-row>
         </v-container>
@@ -69,21 +65,21 @@
       <v-col cols="1"></v-col>
       <v-col cols="10">
         <div>
-  <v-expansion-panels>
-    <v-expansion-panel v-for="refeicao in Refeicoes" :key="refeicao"
-    >
-    
-      <v-expansion-panel-header>
-        <v-row>
-          <v-col cols="3">
+          <v-expansion-panels>
+            <v-expansion-panel v-for="refeicao in Refeicoes" :key="refeicao">
+
+              <v-expansion-panel-header>
+                <v-row>
+                  <v-col cols="3">
+                    <v-checkbox>
 
           </v-col>
           <v-col cols="4">
             <v-card-subtitle>
-            <h4>{{refeicao.titulo}}</h4></v-card-subtitle>
+            <h4>{{refeicao.titulo}} fgsdfgsgd</h4></v-card-subtitle>
           </v-col>
           <v-col cols="1">
-            <v-btn color="#4DC3C8" max-width="100px" @click="formAlimentos = true"><v-icon>mdi-pencil</v-icon>editar</v-btn>
+            <v-btn color="#4DC3C8" max-width="100px" @click="formAlimentos"><v-icon>mdi-pencil</v-icon>editar</v-btn>
           </v-col>
           <v-col cols="1"></v-col>
           <v-col cols="1">
@@ -95,6 +91,9 @@
 
       </v-expansion-panel-header> 
         Para adicionar clique na opção "editar"
+        <v-text>
+          <v-btn color="#4DC3C8" max-width="100px" @click="formAlimentos"><v-icon>mdi-pencil</v-icon>editar</v-btn>
+        </v-text>
     </v-expansion-panel>
   </v-expansion-panels>
 </div>
@@ -108,20 +107,22 @@
         <v-container>
           <v-row>
             <v-col>
-              <v-card-subtitle>
-                <h4>Alimentos Disponíveis</h4>
-              </v-card-subtitle>
+              <v-text-field label="Nome da refeição" counter maxlength="20"></v-text-field> 
+              <v-text-field label="Hora da refeição: XX:XX"></v-text-field> 
             </v-col>
             </v-row>
             <v-row>
-            <v-col cols="12" sm="4">
-            <v-btn color="#4DC3C8"><v-icon>mdi-plus</v-icon> Adicionar Alimentos</v-btn>
+            <v-col
+              cols="12"
+              sm="4">
+    
+              <v-btn color="#4DC3C8"><v-icon>mdi-plus</v-icon> Criar refeição</v-btn>
             </v-col>
             <v-col cols="12" sm="1"></v-col>
             <v-col
               cols="12"
               sm="2">
-              <v-btn color="#B2DFE1" @click="formAlimentos = false"><v-icon>mdi-cancel</v-icon>Cancelar</v-btn>
+              <v-btn color="#B2DFE1"><v-icon>mdi-cancel</v-icon>Cancelar</v-btn>
             </v-col>
           </v-row>
         </v-container>
@@ -134,7 +135,7 @@
 </template>
 
 <script>
-import Refeicao from '../components/Refeicao.vue'
+import Alimento from '../components/Alimento.vue'
 export default {
   props: ['titulo'],
   components: {
@@ -142,17 +143,12 @@ export default {
     }, 
     data() {
         return {
-          Aviso: false,
           Campotitulo: "",
           formRefs:false,
           formAlimentos:false,
             dialog: false,
             ptotal: 5,
-            Numrefs: 2,
-            Refeicoes:[
-              {titulo:"almoçinho"},
-              {titulo:"cafe de americano"}
-            ]
+            Refeicoes:[]
         };
     },
     methods: {
@@ -163,16 +159,15 @@ export default {
           this.$router.push({name: "Refeicoes"})
         },
          FuncAddRefeicao(){
-      if(this.Campotitulo){          
-        this.Numrefs = this.Numrefs + 1,
+      if(this.Campotitulo){
         this.Refeicoes.push({
-          titulo:this.Campotitulo,
-
-        })     
-        this.Campotitulo="";
+          titulo:this.Campotitulo
+        })
       }
+      this.Campotitulo="";
+    }
     },
-  },
+
 } 
 </script>
 
@@ -180,11 +175,13 @@ export default {
 .infocard {
   text-align: center;
 }
+
 .porcoes {
-  text-decoration-color:#4DC3C8;
+  text-decoration-color: #4DC3C8;
 }
+
 .body {
-  font-family:Helvetica, sans-serif;
+  font-family: Helvetica, sans-serif;
   padding: 0;
   text-align: center;
 }
