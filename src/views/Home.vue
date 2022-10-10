@@ -84,7 +84,6 @@
                     <v-card-subtitle>
                       <h2>Como foi desenvolvido?</h2>
                     </v-card-subtitle>
-
                       <v-row>
                         <v-col cols="6">
                           <v-card color="#B2DFE1" class="alunos">

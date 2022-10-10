@@ -6,8 +6,14 @@
         <v-card-subtitle>
           <h3 class="alimentocard">{{idalimento.titulo}}</h3>
         </v-card-subtitle>
+        <v-card-subtitle>
+          Peso/Porção: {{idalimento.peso}} gramas
+        </v-card-subtitle>
+        <v-card-subtitle>
+          Caloria: {{idalimento.calorias}} cal
+        </v-card-subtitle> 
       </v-col> 
-      <v-col cols="2">
+      <v-col cols="4">
         <v-card-subtitle>
           <v-btn color="#4DC3C8" @click="Tirarporcao">
             <v-icon>mdi-minus</v-icon>
@@ -18,7 +24,7 @@
           </v-btn>
         </v-card-subtitle>
       </v-col>
-      <v-col cols="5">
+      <v-col cols="3">
         <v-card-subtitle>
           Peso/Porção: {{idalimento.peso}} gramas
         </v-card-subtitle>

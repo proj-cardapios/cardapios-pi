@@ -8,12 +8,12 @@ Vue.use(VueRouter)
 const routes = [
   
   {
-    path: '',
-    component: () => import('@/layouts/Default'),
-    meta: {
-      requiresAuth: false
-    },
-    children:[
+      path: '',
+      component: () => import('@/layouts/Default'),
+      meta: {
+        requiresAuth: false
+      },
+      children:[
   {
     path: '/home',
     name: 'Home',
