@@ -24,7 +24,7 @@
                     <v-text-field label="Email" outlined ></v-text-field>
                     <v-text-field label="Senha" outlined></v-text-field>
                     <v-btn @click="entrar" color="#4DC3C8">  Login  </v-btn>
-                     <h3 class="titlecadastro">Quer experimentar? Totalmente gratuito!</h3>
+                     <h4 class="titlecadastro">Quer experimentar? Clique abaixo</h4>
                     <v-btn @click="cadastrar" color="#4DC3C8"> cadastrar </v-btn>
             </v-form>
     </v-col>
@@ -61,7 +61,7 @@ export default {
   font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
 }
 .body {
-  font-family:Helvetica, sans-serif;
+  font-family:'Arial Narrow', Arial, sans-serif;
   padding: 0;
 }
 .login {

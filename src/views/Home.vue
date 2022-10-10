@@ -99,7 +99,7 @@
                         <v-col cols="6">
                           <v-card color="#B2DFE1" class="alunos">
                           <v-card-subtitle>
-                            <h3> Fron-end</h3>
+                            <h3> Back-end</h3>
                           </v-card-subtitle>
                           <v-card-subtitle>
                             <h5> Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.</h5>
@@ -265,6 +265,10 @@ export default {
           id: 1,
           titulo: "morte a dieta",
         },
+        {
+          id: 2,
+          titulo: "era so uma fritura",
+        },
       ],
       Usuario: {
         Nome: "Jorge Luis Zanela",
@@ -314,7 +318,7 @@ export default {
   margin-top: 2rem;
 }
 .body {
-  font-family: Helvetica, sans-serif;
+  font-family:'Arial Narrow', Arial, sans-serif;
   padding: 0;
   text-align: center;
 }

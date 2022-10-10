@@ -34,11 +34,11 @@
     </div>
     <v-row class="botoes">
       <v-col cols="3">
-        <v-btn color="#4DC3C8">Cancelar</v-btn>
+        <v-btn color="#4DC3C8">Cadastrar-se</v-btn>
       </v-col>
-      <v-col cols="1"></v-col>
+      <v-col cols="2"></v-col>
       <v-col cols="3">
-        <v-btn color="#4DC3C8">  Cadastrar-se  </v-btn>
+        <v-btn color="#B2DFE1" @click="VoltarLogin">Cancelar</v-btn>
       </v-col>
     </v-row>
   </v-col>
@@ -56,6 +56,11 @@ export default {
         Frutos: false,
       }
     },
+    methods: {
+    VoltarLogin() {
+      this.$router.push({ name: "Login" });
+    },
+  }
   }
 </script>
 
