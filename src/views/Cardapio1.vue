@@ -118,12 +118,12 @@
 
                 <v-col>
                   <v-card>
-                    <Alimento :idalimento="id" v-for="id in Alimentos" :key="id"/>  
+                    <Alimento :idalimento="id" v-for="id in Alimentos" :key="id" />
                   </v-card>
 
                 </v-col>
-                  </v-row>
-                  
+              </v-row>
+
               <v-row>
                 <v-col cols="12" sm="4">
                   <v-btn color="#4DC3C8">
@@ -155,7 +155,8 @@ export default {
   },
   data() {
     return {
-      Nrefs:1,
+      Alertaerro: false,
+      Nrefs: 1,
       Campotitulo: "",
       formRefs: false,
       formAlimentos: false,
@@ -167,56 +168,56 @@ export default {
         }
       ],
       Alimentos: [
-              {
-              id: 1,
-              titulo: "feijão",
-              peso: 50,
-              calorias:90,
-              porcao:0
-              },
-              {
-              id: 2,
-              titulo: "arroz",
-              peso: 50,
-              calorias:70,
-              porcao:0
-              },
-              {
-              id: 3,
-              titulo: "Alface",
-              peso: 40,
-              calorias:50,
-              porcao:0
-              },
-              {
-              id: 4,
-              titulo: "batata cozida",
-              peso: 50,
-              calorias:80,
-              porcao:0
-              },
-              {
-              id: 5,
-              titulo: "Beterraba",
-              peso: 50,
-              calorias:80,
-              porcao:0
-              },
-              {
-              id: 6,
-              titulo: "cenoura cozida",
-              peso: 50,
-              calorias:80,
-              porcao:0
-              },
-              {
-              id: 7,
-              titulo: "aipim cozido",
-              peso: 50,
-              calorias:80,
-              porcao:0
-              },
-            ],
+        {
+          id: 1,
+          titulo: "feijão",
+          peso: 50,
+          calorias: 90,
+          porcao: 0
+        },
+        {
+          id: 2,
+          titulo: "arroz",
+          peso: 50,
+          calorias: 70,
+          porcao: 0
+        },
+        {
+          id: 3,
+          titulo: "Alface",
+          peso: 40,
+          calorias: 50,
+          porcao: 0
+        },
+        {
+          id: 4,
+          titulo: "batata cozida",
+          peso: 50,
+          calorias: 80,
+          porcao: 0
+        },
+        {
+          id: 5,
+          titulo: "Beterraba",
+          peso: 50,
+          calorias: 80,
+          porcao: 0
+        },
+        {
+          id: 6,
+          titulo: "cenoura cozida",
+          peso: 50,
+          calorias: 80,
+          porcao: 0
+        },
+        {
+          id: 7,
+          titulo: "aipim cozido",
+          peso: 50,
+          calorias: 80,
+          porcao: 0
+        },
+      ],
     };
   },
   methods: {
@@ -235,12 +236,13 @@ export default {
       }
       this.Campotitulo = "";
     },
-    async Addporcao() {
-      this.porcao = this.porcao + 1
-    },
-    async Tirarporcao() {
-      this.porcao = this.porcao - 1
-    },
+      Maxrefs(){
+        if (this.Nerefs = 5){
+          return{
+            Alertaerro: true
+          }
+        }
+      },
   },
 } 
 </script>
@@ -249,9 +251,11 @@ export default {
 .infocard {
   text-align: center;
 }
+
 .porcoes {
   text-decoration-color: #4DC3C8;
 }
+
 .body {
   font-family: Helvetica, sans-serif;
   padding: 0;

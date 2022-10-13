@@ -1,19 +1,22 @@
 <template>
   <div>
-    <v-divider color="#4DC3C8"></v-divider>
+    <v-card shaped>
     <v-row class="infoalimentos">
       <v-col cols="3">
         <v-card-subtitle>
-          <h3 class="alimentocard">{{idalimento.titulo}}</h3>
+          <h2 class="alimentocard">{{idalimento.titulo}}</h2>
         </v-card-subtitle>
         <v-card-subtitle>
           Peso/Porção: {{idalimento.peso}} gramas
         </v-card-subtitle>
         <v-card-subtitle>
           Caloria: {{idalimento.calorias}} cal
-        </v-card-subtitle> 
-      </v-col> 
+        </v-card-subtitle>
+      </v-col>
       <v-col cols="4">
+        <v-card-subtitle>
+          <h4>Porções:</h4>
+        </v-card-subtitle>
         <v-card-subtitle>
           <v-btn color="#4DC3C8" @click="Tirarporcao">
             <v-icon>mdi-minus</v-icon>
@@ -26,14 +29,17 @@
       </v-col>
       <v-col cols="3">
         <v-card-subtitle>
-          Peso/Porção: {{idalimento.peso}} gramas
+          Gorduras:
         </v-card-subtitle>
         <v-card-subtitle>
-          Caloria: {{idalimento.calorias}} cal
-        </v-card-subtitle>  
+          Proteínas:
+        </v-card-subtitle>
+        <v-card-subtitle>
+          Carboidratos:
+        </v-card-subtitle>
       </v-col>
     </v-row>
-    <v-divider color="#4DC3C8"></v-divider>
+  </v-card>
   </div>
 </template>
 
@@ -44,10 +50,10 @@ export default {
   },
   methods: {
     async Addporcao() {
-      this.porcao = this.porcao + 1
+      this.idalimento.porcao = this.idalimento.porcao + 1
     },
     async Tirarporcao() {
-      this.porcao = this.porcao - 1
+      this.idalimento.porcao = this.idalimento.porcao - 1
     },
   }
 }
@@ -57,6 +63,8 @@ export default {
 .infoalimentos {
   margin: 4px 0;
   padding-top: 2px;
+  border:1px solid #4DC3C8;
 }
+
 </style>
 
