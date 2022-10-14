@@ -1,20 +1,30 @@
 <template>
   <v-container fluid class="body">
-
     <v-row>
       <v-col cols="1"></v-col>
       <v-col cols="6">
-        <v-card>
+        <v-card shaped>
           <div>
-            <v-divider color=#4DC3C8></v-divider>
-            <v-card-subtitle>
-              <h3>Nome do Cardápio </h3>
-            </v-card-subtitle>
+            <v-card color="#B2DFE1">
+              <v-card-subtitle>
+                <h2>Nome do Cardápio</h2>
+              </v-card-subtitle>
+            </v-card>
+
             <v-divider></v-divider>
             <v-card-subtitle>
-              {{titulo}}
+              <h4>morte a dieta</h4>
             </v-card-subtitle>
             <v-divider color="#4DC3C8"></v-divider>
+            <v-card>
+              <v-card-subtitle>
+                <h3>Calorias Totais</h3>
+              </v-card-subtitle>
+            </v-card>
+            <v-divider></v-divider>
+            <v-card-subtitle>
+              <h4>1900 cal</h4>
+            </v-card-subtitle>
           </div>
         </v-card>
       </v-col>
@@ -29,32 +39,43 @@
         </v-card-text>
         <v-card-subtitle>
           <h4>Numero de refeições:</h4>
-          <h4>{{Nrefs}}/5</h4>
+          <h4>{{ Nrefs }}/5</h4>
         </v-card-subtitle>
       </v-col>
     </v-row>
     <v-row>
       <v-col cols="1"></v-col>
       <v-col cols="10">
-        <v-alert class="formcardapio" transition="scale-transition" v-show="formRefs" elevation="6" outlined shaped>
+        <v-alert
+          class="formcardapio"
+          transition="scale-transition"
+          v-show="formRefs"
+          elevation="6"
+          outlined
+          shaped
+        >
           <v-form>
             <v-container>
               <v-row>
                 <v-col>
-                  <v-text-field v-model="Campotitulo" label="Nome da refeição" counter maxlength="20"></v-text-field>
+                  <v-text-field
+                    v-model="Campotitulo"
+                    label="Nome da refeição"
+                    counter
+                    maxlength="20"
+                  ></v-text-field>
                   <v-text-field label="Hora da refeição: XX:XX"></v-text-field>
                 </v-col>
               </v-row>
               <v-row>
                 <v-col cols="12" sm="4">
-
                   <v-btn color="#4DC3C8" @click.stop="FuncAddRefeicao">
                     <v-icon>mdi-plus</v-icon> Criar refeição
                   </v-btn>
                 </v-col>
                 <v-col cols="12" sm="1"></v-col>
                 <v-col cols="12" sm="2">
-                  <v-btn color="#B2DFE1" @click="formRefs = false ">
+                  <v-btn color="#B2DFE1" @click="formRefs = false">
                     <v-icon>mdi-cancel</v-icon>Cancelar
                   </v-btn>
                 </v-col>
@@ -66,27 +87,27 @@
       <v-col cols="1"></v-col>
     </v-row>
     <v-row>
-
       <v-col cols="1"></v-col>
       <v-col cols="10">
         <div>
           <v-expansion-panels>
             <v-expansion-panel v-for="refeicao in Refeicoes" :key="refeicao">
-
               <v-expansion-panel-header>
                 <v-row>
                   <v-col cols="3">
-                    <v-checkbox>
-
-                    </v-checkbox>
+                    <v-checkbox> </v-checkbox>
                   </v-col>
                   <v-col cols="4">
                     <v-card-subtitle>
-                      <h4>{{refeicao.titulo}}</h4>
+                      <h4>{{ refeicao.titulo }}</h4>
                     </v-card-subtitle>
                   </v-col>
                   <v-col cols="1">
-                    <v-btn color="#4DC3C8" max-width="100px" @click="formAlimentos = true">
+                    <v-btn
+                      color="#4DC3C8"
+                      max-width="100px"
+                      @click="formAlimentos = true"
+                    >
                       <v-icon>mdi-pencil</v-icon>editar
                     </v-btn>
                   </v-col>
@@ -97,9 +118,6 @@
                     </v-btn>
                   </v-col>
                 </v-row>
-
-
-
               </v-expansion-panel-header>
               Para adicionar clique na opção "editar"
             </v-expansion-panel>
@@ -110,17 +128,25 @@
 
       <v-col col="1"></v-col>
       <v-col cols="10">
-        <v-alert class="formcardapio" transition="scale-transition" v-show="formAlimentos" elevation="6" outlined
-          shaped>
+        <v-alert
+          class="formcardapio"
+          transition="scale-transition"
+          v-show="formAlimentos"
+          elevation="6"
+          outlined
+          shaped
+        >
           <v-form>
             <v-container>
               <v-row>
-
                 <v-col>
                   <v-card>
-                    <Alimento :idalimento="id" v-for="id in Alimentos" :key="id" />
+                    <Alimento
+                      :idalimento="id"
+                      v-for="id in Alimentos"
+                      :key="id"
+                    />
                   </v-card>
-
                 </v-col>
               </v-row>
 
@@ -147,11 +173,11 @@
 </template>
 
 <script>
-import Alimento from '../components/Alimento.vue'
+import Alimento from "../components/Alimento.vue";
 export default {
-  props: ['titulo'],
+  props: ["titulo"],
   components: {
-    Alimento
+    Alimento,
   },
   data() {
     return {
@@ -164,8 +190,8 @@ export default {
       Refeicoes: [
         {
           titulo: "frango e batata doce",
-          id: 1
-        }
+          id: 1,
+        },
       ],
       Alimentos: [
         {
@@ -173,49 +199,49 @@ export default {
           titulo: "feijão",
           peso: 50,
           calorias: 90,
-          porcao: 0
+          porcao: 0,
         },
         {
           id: 2,
           titulo: "arroz",
           peso: 50,
           calorias: 70,
-          porcao: 0
+          porcao: 0,
         },
         {
           id: 3,
           titulo: "Alface",
           peso: 40,
           calorias: 50,
-          porcao: 0
+          porcao: 0,
         },
         {
           id: 4,
           titulo: "batata cozida",
           peso: 50,
           calorias: 80,
-          porcao: 0
+          porcao: 0,
         },
         {
           id: 5,
           titulo: "Beterraba",
           peso: 50,
           calorias: 80,
-          porcao: 0
+          porcao: 0,
         },
         {
           id: 6,
           titulo: "cenoura cozida",
           peso: 50,
           calorias: 80,
-          porcao: 0
+          porcao: 0,
         },
         {
           id: 7,
           titulo: "aipim cozido",
           peso: 50,
           calorias: 80,
-          porcao: 0
+          porcao: 0,
         },
       ],
     };
@@ -225,26 +251,26 @@ export default {
       this.$router.push({ name: "Home" });
     },
     async Editarrefs() {
-      this.$router.push({ name: "Refeicoes" })
+      this.$router.push({ name: "Refeicoes" });
     },
     FuncAddRefeicao() {
       this.Nrefs = this.Nrefs + 1;
       if (this.Campotitulo) {
         this.Refeicoes.push({
-          titulo: this.Campotitulo
-        })
+          titulo: this.Campotitulo,
+        });
       }
       this.Campotitulo = "";
     },
-      Maxrefs(){
-        if (this.Nerefs = 5){
-          return{
-            Alertaerro: true
-          }
-        }
-      },
+    Maxrefs() {
+      if ((this.Nerefs = 5)) {
+        return {
+          Alertaerro: true,
+        };
+      }
+    },
   },
-} 
+};
 </script>
 
 <style>
@@ -253,7 +279,7 @@ export default {
 }
 
 .porcoes {
-  text-decoration-color: #4DC3C8;
+  text-decoration-color: #4dc3c8;
 }
 
 .body {
