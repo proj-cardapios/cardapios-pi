@@ -6,9 +6,10 @@
         <v-card shaped>
           <div>
             <v-card color="#B2DFE1">
-              <v-card-subtitle>
+              <div><v-card-subtitle>
                 <h2>Nome do Cardápio</h2>
-              </v-card-subtitle>
+              </v-card-subtitle></div>
+              
             </v-card>
 
             <v-divider></v-divider>
@@ -16,10 +17,11 @@
               <h4>morte a dieta</h4>
             </v-card-subtitle>
             <v-divider color="#4DC3C8"></v-divider>
-            <v-card>
+            <v-card><div>
               <v-card-subtitle>
+                
                 <h3>Calorias Totais</h3>
-              </v-card-subtitle>
+              </v-card-subtitle></div>
             </v-card>
             <v-divider></v-divider>
             <v-card-subtitle>
@@ -119,7 +121,70 @@
                   </v-col>
                 </v-row>
               </v-expansion-panel-header>
+              <v-expansion-panel-content>
               Para adicionar clique na opção "editar"
+            </v-expansion-panel-content>
+            </v-expansion-panel>
+          </v-expansion-panels>
+          <v-expansion-panels>
+            <v-expansion-panel>
+              <v-expansion-panel-header>
+                <v-row>
+                  <v-col cols="3">
+                    <v-checkbox> </v-checkbox>
+                  </v-col>
+                  <v-col cols="4">
+                    <v-card-subtitle>
+                      <h4>comidinha de cria</h4>
+                    </v-card-subtitle>
+                  </v-col>
+                  <v-col cols="1">
+                    <v-btn
+                      color="#4DC3C8"
+                      max-width="100px"
+                      @click="formAlimentos = true"
+                    >
+                      <v-icon>mdi-pencil</v-icon>editar
+                    </v-btn>
+                  </v-col>
+                  <v-col cols="1"></v-col>
+                  <v-col cols="1">
+                    <v-btn color="#B2DFE1" max-width="140px">
+                      <v-icon>mdi-delete </v-icon>Excluir
+                    </v-btn>
+                  </v-col>
+                </v-row>
+              </v-expansion-panel-header>
+              <v-expansion-panel-content>
+              <v-row>
+                <v-col cols="4">
+                  <ul><li>Opera</li></ul>
+                  <ul><li>Opera</li></ul>
+                  <ul><li>Opera</li></ul>
+                </v-col>
+                <v-col cols="2">
+                  sdagsgsgsg
+                  djhsdkjhsdçghsdh
+                  pdsjghslkdjgh
+                </v-col>
+                <v-col cols="3">
+                  sdaggsdg
+                  çdkljgslkgj
+                  sdgkjdslgkjdsgçlsdkjgls
+                </v-col>
+                <v-col cols="3">
+                  sdgdsgsdgsdgsdg
+                  sdkçjghsdkgjhsd
+                  glshjgdçlskdjhg
+                </v-col>
+                <ul>
+        <li>Internet Explorer</li>
+	<li>Opera</li>
+	<li>Firefox</li>
+	<li>Safari</li>
+</ul>
+              </v-row>
+            </v-expansion-panel-content>
             </v-expansion-panel>
           </v-expansion-panels>
         </div>
@@ -158,7 +223,7 @@
                 </v-col>
                 <v-col cols="12" sm="1"></v-col>
                 <v-col cols="12" sm="2">
-                  <v-btn color="#B2DFE1">
+                  <v-btn color="#B2DFE1" @click="formAlimentos = false">
                     <v-icon>mdi-cancel</v-icon>Cancelar
                   </v-btn>
                 </v-col>
@@ -173,6 +238,7 @@
 </template>
 
 <script>
+
 import Alimento from "../components/Alimento.vue";
 export default {
   props: ["titulo"],
@@ -182,7 +248,7 @@ export default {
   data() {
     return {
       Alertaerro: false,
-      Nrefs: 1,
+      Nrefs: 2,
       Campotitulo: "",
       formRefs: false,
       formAlimentos: false,
@@ -287,4 +353,5 @@ export default {
   padding: 0;
   text-align: center;
 }
+
 </style>
